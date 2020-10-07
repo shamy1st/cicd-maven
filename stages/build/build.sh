@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WORKSPACE=/Users/elshamy/Documents/courses/jenkins/cicd/pipeline
+WORKSPACE=/var/jenkins_home/workspace/pipeline-demo
 
 # Copy the new jar to the build location
 cp -f $WORKSPACE/java-app/target/*.jar $WORKSPACE/stages/build/
