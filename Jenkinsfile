@@ -4,18 +4,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './stages/mvn.sh mvn -B -DskipTests clean package'
-                sh './stages/build/build.sh'
+                sh '/Users/elshamy/Documents/courses/jenkins/cicd/pipeline/stages/mvn.sh mvn -B -DskipTests clean package'
+                sh '/Users/elshamy/Documents/courses/jenkins/cicd/pipeline/stages/build/build.sh'
             }
         }
         stage('Test') {
             steps {
-                sh './stages/mvn.sh mvn test'
+                sh '/Users/elshamy/Documents/courses/jenkins/cicd/pipeline/stages/mvn.sh mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                sh './stages/deploy/deploy.sh'
+                sh '/Users/elshamy/Documents/courses/jenkins/cicd/pipeline/stages/deploy/deploy.sh'
             }
         }
     }
