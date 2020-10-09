@@ -9,17 +9,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "${APPLICATION_PATH}/stages/build.sh ${APPLICATION_PATH}"
+                sh "${env.WORKSPACE}/stages/build.sh ${APPLICATION_PATH}"
             }
         }
         stage('Test') {
             steps {
-                sh "${APPLICATION_PATH}/stages/test.sh ${APPLICATION_PATH}"
+                sh "${env.WORKSPACE}/stages/test.sh ${APPLICATION_PATH}"
             }
         }
         stage('Deploy') {
             steps {
-                sh "${APPLICATION_PATH}/stages/deploy.sh ${APPLICATION_PATH} ${PRODUCTION}"
+                sh "${env.WORKSPACE}/stages/deploy.sh ${APPLICATION_PATH} ${PRODUCTION}"
             }
         }
     }
