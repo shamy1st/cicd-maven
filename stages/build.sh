@@ -1,11 +1,11 @@
 #!/bin/bash
 
 APPLICATION=java-app
-JOB=pipeline-demo
+JOB=$1
 WORKSPACE=/var/jenkins_home/workspace
 
 echo "**************************"
-echo "****** Building jar ******"
+echo "****** Building Jar ******"
 echo "**************************"
 
 cd $WORKSPACE/$JOB/$APPLICATION && mvn -B -DskipTests clean package

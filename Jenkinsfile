@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/build.sh'
+                sh '/var/jenkins_home/workspace/pipeline-demo/stages/build.sh ${env.JOB_NAME}'
             }
         }
         stage('Test') {
