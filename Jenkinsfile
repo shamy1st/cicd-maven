@@ -11,10 +11,22 @@ pipeline {
             steps {
                 sh "${env.WORKSPACE}/stages/build.sh ${APPLICATION_PATH}"
             }
+
+            post {
+                success {
+                   archiveArtifacts artifacts: "${APPLICATION_PATH}/target/*.jar", fingerprint: true
+                }
+            }
         }
         stage('Test') {
             steps {
                 sh "${env.WORKSPACE}/stages/test.sh ${APPLICATION_PATH}"
+            }
+
+            post {
+                always {
+                    junit "${APPLICATION_PATH}/target/surefire-reports/*.xml"
+                }
             }
         }
         stage('Deploy') {
