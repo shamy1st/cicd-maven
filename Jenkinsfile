@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/deploy.sh'
+                sh "/var/jenkins_home/workspace/pipeline-demo/stages/deploy.sh ${env.WORKSPACE} java-app"
             }
         }
     }
