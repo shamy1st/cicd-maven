@@ -1,8 +1,8 @@
 #!/bin/bash
 
-APPLICATION=java-app
-JOB=$1
-WORKSPACE=/var/jenkins_home/workspace
+APPLICATION=$3
+WORKSPACE=$1
+JOB=$2
 
 echo "**************************"
 echo "****** Building Jar ******"
