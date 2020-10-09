@@ -9,17 +9,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "/var/jenkins_home/workspace/pipeline-demo/stages/build.sh ${APPLICATION_PATH}"
+                sh "${APPLICATION_PATH}/stages/build.sh ${APPLICATION_PATH}"
             }
         }
         stage('Test') {
             steps {
-                sh "/var/jenkins_home/workspace/pipeline-demo/stages/test.sh ${APPLICATION_PATH}"
+                sh "${APPLICATION_PATH}/stages/test.sh ${APPLICATION_PATH}"
             }
         }
         stage('Deploy') {
             steps {
-                sh "/var/jenkins_home/workspace/pipeline-demo/stages/deploy.sh ${APPLICATION_PATH} ${PRODUCTION}"
+                sh "${APPLICATION_PATH}/stages/deploy.sh ${APPLICATION_PATH} ${PRODUCTION}"
             }
         }
     }
