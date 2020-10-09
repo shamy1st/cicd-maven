@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/test.sh'
+                sh "/var/jenkins_home/workspace/pipeline-demo/stages/test.sh ${env.WORKSPACE} java-app"
             }
         }
         stage('Deploy') {

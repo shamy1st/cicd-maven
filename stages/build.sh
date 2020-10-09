@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WORKSPACE=$1
-APPLICATION=$3
+APPLICATION=$2
 
 echo "**************************"
 echo "****** Building Jar ******"
