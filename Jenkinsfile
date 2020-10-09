@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/mvn.sh mvn -B -DskipTests clean package'
+                sh '/var/jenkins_home/workspace/pipeline-demo/stages/build.sh'
             }
         }
         stage('Test') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/mvn.sh mvn test'
+                sh '/var/jenkins_home/workspace/pipeline-demo/stages/test.sh'
             }
         }
         stage('Deploy') {
             steps {
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/deploy/deploy.sh'
+                sh '/var/jenkins_home/workspace/pipeline-demo/stages/deploy.sh'
             }
         }
     }
