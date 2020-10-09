@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        APPLICATION_PATH = "${env.WORKSPACE}/java-app"
+        JAVA_APP = "java-app"
+        APPLICATION_PATH = "${env.WORKSPACE}/${JAVA_APP}"
         PRODUCTION = "production-container"
     }
 
@@ -14,7 +15,7 @@ pipeline {
 
             post {
                 success {
-                   archiveArtifacts artifacts: "${APPLICATION_PATH}/target/*.jar", fingerprint: true
+                   archiveArtifacts artifacts: "${JAVA_APP}/target/*.jar", fingerprint: true
                 }
             }
         }
@@ -25,7 +26,7 @@ pipeline {
 
             post {
                 always {
-                    junit "${APPLICATION_PATH}/target/surefire-reports/*.xml"
+                    junit "${JAVA_APP}/target/surefire-reports/*.xml"
                 }
             }
         }
