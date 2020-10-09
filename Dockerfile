@@ -39,6 +39,6 @@ apt-get install nano
 
 RUN apt-get update && apt-get install -y maven
 
-RUN chmod 666 /var/run/docker.sock
+#RUN chmod 666 /var/run/docker.sock
 
 USER jenkins
