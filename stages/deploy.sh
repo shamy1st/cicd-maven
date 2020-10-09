@@ -1,10 +1,6 @@
 #!/bin/bash
 
-WORKSPACE=$1
-APPLICATION=$2
+APPLICATION_PATH=$1
+PRODUCTION=$2
 
-PRODUCTION=production-container
-PRODKEY=/tmp/prod-key
-
-docker cp $WORKSPACE/$APPLICATION/target/*.jar $PRODUCTION:/app/app.jar
-
+docker cp $APPLICATION_PATH/target/*.jar $PRODUCTION:/app/app.jar

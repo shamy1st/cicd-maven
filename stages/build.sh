@@ -1,10 +1,9 @@
 #!/bin/bash
 
-WORKSPACE=$1
-APPLICATION=$2
+APPLICATION_PATH=$1
 
 echo "**************************"
 echo "****** Building Jar ******"
 echo "**************************"
 
-cd $WORKSPACE/$APPLICATION && mvn -B -DskipTests clean package
+cd $APPLICATION_PATH && mvn -B -DskipTests clean package

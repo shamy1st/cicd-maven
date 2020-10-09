@@ -1,10 +1,9 @@
 #!/bin/bash
 
-WORKSPACE=$1
-APPLICATION=$2
+APPLICATION_PATH=$1
 
 echo "**********************"
 echo "****** Test App ******"
 echo "**********************"
 
-cd $WORKSPACE/$APPLICATION && mvn test
+cd $APPLICATION_PATH && mvn test
