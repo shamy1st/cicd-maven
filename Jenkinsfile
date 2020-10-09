@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '/var/jenkins_home/workspace/pipeline-demo/stages/mvn.sh mvn -B -DskipTests clean package'
-                sh '/var/jenkins_home/workspace/pipeline-demo/stages/build/build.sh'
             }
         }
         stage('Test') {
